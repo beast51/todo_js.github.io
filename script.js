@@ -3,12 +3,12 @@ let todoList = getTodoFromLS();
 const input = document.querySelector(".todo__input");
 input.addEventListener("keydown", (event) => {
   if (event.key === "Enter" && input.value.trim() !== '') {
-    const item = {};
-    item.id = Date.now();
-    item.text = input.value;
-    item.completed = false;
+    todoList.push({ 
+      id : Date.now(),
+      text: input.value,
+      completed: false
+    });
     input.value = "";
-    todoList.push(item);
     renderTodoItem(todoList);
     saveTodoToLS();
   }
@@ -48,6 +48,9 @@ function saveTodoToLS() {
 }
 
 function getTodoFromLS() {
+  if (JSON.parse(localStorage.getItem("todoList")) === null) {
+    return [];
+  }
   return JSON.parse(localStorage.getItem("todoList"));
 }
 
