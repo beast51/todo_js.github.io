@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0; 
+}
+
+ul {
+    margin: 0;
+    list-style: none; 
+}
+
+form select,
+input {
+  border: 1px solid #c4c4c4;
+  border-radius: 4px;
+  height: 36px;
+  width: 100%;
+  padding: 0 0 0 12px;
+  background-color: #ffffff; }
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #3b6d9a;
+  outline: none;
+  transition: 0.3s; }
+
+button {
+  display: block;
+  background: 0 0;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  width: 100px;
+  line-height: 44px;
+  transition: 0.3s;
+  border-radius: 4px;
+  /* margin-bottom: 24px; */
+  white-space: nowrap;
+  font-family: Roboto, sans-serif;
+  font-size: 18px; 
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.todo-out__title {
+    margin-bottom: 10px;
+}
+
+.todo {
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo__input {
+    margin-bottom: 50px;
+}
+
+.todo-out {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.todo-out__items {
+    width: 100%;
+}
+
+.todo-out__item {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #c4c4c4;
+    border-radius: 4px;
+    min-height: 36px;
+}
+
+.item-input {
+    display: flex;
+    align-items: center;
+    padding: 8px 8px;
+    width: 80%;
+    
+}
+
+.item-input__checkbox {
+    height: 16px;
+    width: 40px;
+    margin-right: 16px;
+    min-width: 40px;
+}
+
+.item-input__checkbox:checked + span {
+    text-decoration: line-through;
+}
+
+.item-input__button {
+    padding:0px 5px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 36px;
+    width: 20%;
+    color: orangered;
+}
+
+.item-input__text {
+    word-break: break-word;
+}
+
+@media screen and (min-width: 768px) {
+    .todo {
+        padding: 10px 50px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .todo {
+        padding: 30px 100px;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .todo {
+        padding: 50px 400px;
+    }
+}
+
+
+
+
+
+

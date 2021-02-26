@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="todo">
+      <h1 class="todo__title">Todo</h1>
+      <input
+        class="todo__input"
+        type="text"
+        placeholder="Введите название дела"
+      />
+      <div class="todo-out">
+        <p class="todo-out__title"></p>
+        <ul class="todo-out__items">
+          <li class="todo-out__item item">
+            <label class="item-input">
+                <input class="item-input__checkbox" type="checkbox" id="item-1" checked="false"/>
+                <span class="item-input__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.<span> 
+            </label>
+            <button class="item-input__button">Удалить</button> 
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
