@@ -29,7 +29,7 @@ a {
 
 button {
   display: block;
-  background: 0 0;
+  background: orangered;
   cursor: pointer;
   border: none;
   text-align: center;
@@ -37,7 +37,6 @@ button {
   line-height: 44px;
   transition: 0.3s;
   border-radius: 4px;
-  /* margin-bottom: 24px; */
   white-space: nowrap;
   font-family: Roboto, sans-serif;
   font-size: 18px; 
@@ -87,8 +86,7 @@ h1 {
     display: flex;
     align-items: center;
     padding: 8px 8px;
-    width: 80%;
-    
+    width: 80%; 
 }
 
 .item-input__checkbox {
@@ -108,7 +106,7 @@ h1 {
     font-weight: 700;
     line-height: 36px;
     width: 20%;
-    color: orangered;
+    color: white;
 }
 
 .item-input__text {
@@ -118,6 +116,12 @@ h1 {
 @media screen and (min-width: 768px) {
     .todo {
         padding: 10px 50px;
+    }
+    .item-input {
+        width: 90%; 
+    }
+    .item-input__button {
+        width: 10%;
     }
 }
 
