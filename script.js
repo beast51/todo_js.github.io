@@ -1,6 +1,6 @@
 let todoList = getTodoFromLS();
-
 const input = document.querySelector(".todo__input");
+
 input.addEventListener("keydown", (event) => {
   if (event.key === "Enter" && input.value.trim() !== '') {
     todoList.push({
@@ -65,34 +65,28 @@ function editTodoTextOn(event) {
       saveTodoToLS();
       renderTodoItem(todoList);
       document.querySelector('.item-input__input').focus();
-      document.querySelector('.item-input__input').onkeydown = function(event) {
+      document.querySelector('.item-input__input').onkeydown = function (event) {
         if (event.key == 'Enter') {
           this.blur();
         }
       };
-    };
+    }
   });
 }
 
 function editTodoTextOff(event) {
-  if (document.querySelector(".item-input__input").value.trim() !== '') {
-    todoList.forEach(item => {
-      if (item.id == event.target.previousElementSibling.id) {
+  todoList.forEach(item => {
+    if (item.id == event.target.previousElementSibling.id) {
+      if (document.querySelector(".item-input__input").value.trim() !== '') {
         item.text = document.querySelector(".item-input__input").value;
         item.edit = !item.edit;
-      }
-    });
-    saveTodoToLS();
-    renderTodoItem(todoList);
-  } else {
-    todoList.forEach(item => {
-      if (item.id == event.target.previousElementSibling.id) {
+      } else {
         item.edit = !item.edit;
       }
-    });
-    saveTodoToLS();
-    renderTodoItem(todoList);
-  }
+    }
+  });
+  saveTodoToLS();
+  renderTodoItem(todoList);
 }
 
 renderTodoItem(todoList);
