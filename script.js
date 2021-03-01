@@ -24,14 +24,14 @@ function renderTodoItem(array) {
     (item) =>
       (out.innerHTML += `
       <li class="todo-out__item item">
-      <label class="item-input">
+      <label class="item-input" ondblclick={editTodoTextOn(event)}>
           <input 
           class="item-input__checkbox" 
           type="checkbox" id=${item.id} 
           ${item.completed ? "checked" : ""}
           />
           ${!item.edit ?
-        `<span ondblclick={editTodoTextOn(event)} class="item-input__text">${item.text}<span> `
+        `<span  class="item-input__text">${item.text}<span> `
         :
         `<input onblur={editTodoTextOff(event)} class="item-input__input" value="${item.text}"/> `}
       </label>
@@ -61,8 +61,9 @@ function getTodoFromLS() {
 const getInputText = () => document.querySelector('.item-input__input')
 
 function editTodoTextOn(event) {
+  console.log(event);
   todoList.forEach(item => {
-    if (item.id == event.target.previousElementSibling.id) {
+    if (item.id == event.srcElement.control.id) {
 
       item.edit = !item.edit;
       saveTodoToLS();
