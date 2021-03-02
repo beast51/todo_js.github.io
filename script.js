@@ -53,10 +53,7 @@ function saveTodoToLS() {
 
 function getTodoFromLS() {
   const parseTodoList = JSON.parse(localStorage.getItem("todoList"));
-  if ( parseTodoList === null) {
-    return [];
-  }
-  return parseTodoList;
+  return parseTodoList === null ? [] : parseTodoList;
 }
 
 const getItemInput = () => document.querySelector('.item-input__input');
