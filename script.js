@@ -1,5 +1,6 @@
 let todoList = getTodoFromLS();
 const input = document.querySelector(".todo__input");
+const getItemInput = () => document.querySelector('.item-input__input');
 
 input.addEventListener("keydown", (event) => {
   if (event.key === "Enter" && input.value.trim() !== '') {
@@ -55,8 +56,6 @@ function getTodoFromLS() {
   const parseTodoList = JSON.parse(localStorage.getItem("todoList"));
   return parseTodoList === null ? [] : parseTodoList;
 }
-
-const getItemInput = () => document.querySelector('.item-input__input');
 
 function editTodoTextOn(event) {
   todoList.forEach(item => {
