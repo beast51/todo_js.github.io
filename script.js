@@ -52,13 +52,14 @@ function saveTodoToLS() {
 }
 
 function getTodoFromLS() {
-  if (JSON.parse(localStorage.getItem("todoList")) === null) {
+  const parseTodoList = JSON.parse(localStorage.getItem("todoList"));
+  if ( parseTodoList === null) {
     return [];
   }
-  return JSON.parse(localStorage.getItem("todoList"));
+  return parseTodoList;
 }
 
-const getInput = () => document.querySelector('.item-input__input');
+const getItemInput = () => document.querySelector('.item-input__input');
 
 function editTodoTextOn(event) {
   todoList.forEach(item => {
@@ -66,8 +67,8 @@ function editTodoTextOn(event) {
       item.edit = !item.edit;
       saveTodoToLS();
       renderTodoItem(todoList);
-      getInput().focus();
-      getInput().onkeydown = function (event) {
+      getItemInput().focus();
+      getItemInput().onkeydown = function (event) {
         if (event.key == 'Enter') {
           this.blur();
         }
@@ -79,8 +80,8 @@ function editTodoTextOn(event) {
 function editTodoTextOff(event) {
   todoList.forEach(item => {
     if (item.id == event.target.previousElementSibling.id) {
-      if (getInput().value.trim() !== '') {
-        item.text = getInput().value;
+      if (getItemInput().value.trim() !== '') {
+        item.text = getItemInput().value;
         item.edit = !item.edit;
       } else {
         item.edit = !item.edit;
