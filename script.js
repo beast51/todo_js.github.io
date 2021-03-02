@@ -58,14 +58,16 @@ function getTodoFromLS() {
   return JSON.parse(localStorage.getItem("todoList"));
 }
 
+const getInput = () => document.querySelector('.item-input__input');
+
 function editTodoTextOn(event) {
   todoList.forEach(item => {
     if (item.id == event.target.previousElementSibling.id) {
       item.edit = !item.edit;
       saveTodoToLS();
       renderTodoItem(todoList);
-      document.querySelector('.item-input__input').focus();
-      document.querySelector('.item-input__input').onkeydown = function (event) {
+      getInput().focus();
+      getInput().onkeydown = function (event) {
         if (event.key == 'Enter') {
           this.blur();
         }
@@ -77,8 +79,8 @@ function editTodoTextOn(event) {
 function editTodoTextOff(event) {
   todoList.forEach(item => {
     if (item.id == event.target.previousElementSibling.id) {
-      if (document.querySelector(".item-input__input").value.trim() !== '') {
-        item.text = document.querySelector(".item-input__input").value;
+      if (getInput().value.trim() !== '') {
+        item.text = getInput().value;
         item.edit = !item.edit;
       } else {
         item.edit = !item.edit;

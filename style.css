@@ -111,6 +111,8 @@ h1 {
 
 .item-input__text {
     word-break: break-word;
+    display: block;
+    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
